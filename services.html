@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Pick your style</title>
+	<link rel="stylesheet" href="style1.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+      crossorigin="anonymous"
+    />
+</head>
+<body>
+	<nav class="navbar">
+      <div class="navbar__container">
+        <a href="testassg2.html#home" id="navbar__logo"><img src="mario.png" id="navbar__logo"></a>
+        <div class="navbar__toggle" id="mobile-menu">
+          <span class="bar"></span> <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="navbar__menu">
+          <li class="navbar__item">
+            <a href="testassg2.html#home" class="navbar__links" id="home-page">Home</a>
+          </li>
+          <li class="navbar__item">
+            <a href="testassg2.html#about" class="navbar__links" id="about-page">About</a>
+          </li>
+          <li class="navbar__item">
+            <a href="testassg2.html#services" class="navbar__links" id="services-page"
+              >Services</a
+            >
+          </li>
+          <li class="navbar__btn">
+            <a href="testassg2.html#sign-up" class="button" id="signup">Sign Up</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+		<!-- <div id="div1">
+			<div id="corporate" ondrop="drop(event)" ondragover="allowDrop(event)" ondragstart="drag(event)"><img src="../assets/images/v-1.jpg" class="services__img" draggable="true" ondragstart="drag(event)"></div>
+			<div id="formal" ondrop="drop(event)" ondragover="allowDrop(event)" ondragstart="drag(event)"><img src="../assets/images/v-2.jpg" class="services__img" draggable="true" ondragstart="drag(event)"></div>
+			<img src="../assets/images/v-3.jpg" class="services__img" ondrop="drop(event)" ondragover="allowDrop(event)" ondragstart="drag(event)" draggable="true" ondragstart="drag(event)">
+		</div>
+		<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div> -->
+	<div class="postcard">
+		<div class="side">
+			<h2>Add Background</h2>
+			<img  id="drag" src="../assets/images/v-1.jpg" draggable="true" ondragstart="drag(event)" class="images">
+		</div>
+		<div class="mainservice">
+			<h2>Choose size: </h2>
+			<input type="reset" id="btn1" value="Delete" onclick="reset()">
+			<input type="submit" id="btn2" value="Save" onclick="reset()">
+			<input type="button" id="btnservice" value="Landscape 3:2" onclick="landscape()">
+			<input type="button" id="btnservice" value="Vertical 2:3" onclick="vertical()">
+
+			<div id="ondrop" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			<div id="ondrop1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		</div>
+	</div>
+
+	
+</body>
+<script type="text/javascript">
+	function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+</script>
+</html>
