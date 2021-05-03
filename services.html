@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Our services</title>
+	<link rel="stylesheet" href="stylefinal.css">
+</head>
+<body>
+	<header>
+		<div>
+		<img src="logo.png">
+		<a href="services.html">SERVICES</a>
+		<a href="about.html">ABOUT</a> 
+		<a href="index2.html">HOME</a>
+		<h2>BARU NAIS!</h2>
+		</div>
+	</header>
+
+	<div class="service_main">
+		<div style="grid-area=choice">
+			<div class="service_head">
+				<h1>Choose your background</h1>
+				<p class="service_theme">Corporate</p>
+				<div class="service_back" id="corporate"  ondrop="drop(event)" ondragover="allowDrop(event)">
+					<img id="drag1" draggable="true" ondragstart="drag(event)" src="blue-custom.jpeg">
+					<img id="drag2" draggable="true" ondragstart="drag(event)" src="box-custom.jpeg">
+				</div>
+				<p class="service_theme">Formal</p>
+				<div class="service_back" id="formal"  ondrop="drop(event)" ondragover="allowDrop(event)">
+					<img id="drag3" draggable="true" ondragstart="drag(event)" src="green-custom.jpeg">
+					<img id="drag4" draggable="true" ondragstart="drag(event)" src="city-custom.jpeg">
+				</div>
+				<p class="service_theme">Informal</p>
+				<div class="service_back" id="informal"  ondrop="drop(event)" ondragover="allowDrop(event)">
+					<img id="drag5" draggable="true" ondragstart="drag(event)" src="cake-custom.jpeg">
+					<img id="drag6" draggable="true" ondragstart="drag(event)" src="flower-custom.jpeg">
+				</div>
+			</div>
+		</div>
+
+	<div style="grid-area: custom">
+				<div class="service_custom" ondrop="drop(event)" ondragover="allowDrop(event)">
+					<div id="dtwo">	
+						<div class="bigbox">
+							<!-- <div class="service_drop"></div> -->
+							<div class="prev-card" id="box">
+							<h2 style="text-align: center;" placeholder="Opening greetings here" id="greetfinal"></h2>
+							<div class="name" id="name1" style="text-align: center; margin-top: 45%;" placeholder="Enter recipient's name"></div>
+							<h3>You are invited for :</h3>
+							<h2 class="name" id="event1" style="text-align: center; margin-top: 30px;" placeholder="Enter event name here"></h2>
+							<div class="name" id="host1" style="text-align: center; margin-top: 20px;" placeholder="Enter host names"></div>
+							<div class="name" id="date1" style="text-align: center; margin-top: 60px;" placeholder="Enter the date"></div>
+							<div class="name" id="time1" style="text-align: center; margin-top: 15px;" placeholder="Enter the time"></div>
+							<div class="name" id="place1" style="text-align: center; margin-top: 15px;" placeholder="Enter the place"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<div>
+
+	<aside>
+		<div style="grid-area: body">
+			<div class="service_content">
+				<h1>Fill in your postcard</h1>
+					<div class="aside" style="text-align: center;">
+					<h3>Choose your opening greetings below</h3>
+						<select id="greetList">
+							<option id="opt1">Greetings!</option>
+							<option id="opt2">لسَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ< </option>
+							<option id="opt3">Hello!</option>
+							<option id="opt4">Good Morning!</option>
+							<option id="opt5">Good Evening!</option>
+						</select>
+						</div>
+						<br>
+		<div class="typeIn" style="text-align: center;">
+				<input type="text" placeholder="Enter recipient's name" id="name">
+				<input type="text" placeholder="Event name" id="event">
+				<input type="text" placeholder="Enter address" id="place">
+				<input type="text" placeholder="Enter host names" id="host">
+				<input type="date" placeholder="Enter date" id="date">
+				<br>
+				<input type="time" placeholder="Enter time" id="time">
+				
+				<br>
+				<button onclick="rememberMe()" id="saveButton">Save favourite</button>
+				<button onclick="loadButton()" id="loadButton">Load favourites</button>
+				<button onclick="clearButton()" id="clearButton">Clear All</button>
+				</div>
+			</div>
+		</div>
+	</aside>
+	
+		<script type="text/javascript">
+
+		var n = document.getElementById("name");
+		var e = document.getElementById("event");
+		var p = document.getElementById("place");
+		var d = document.getElementById("date");
+		var t = document.getElementById("time");
+		var h = document.getElementById("host");
+		var g = document.querySelector('#greetList');
+
+		var display_n = document.getElementById("name1");
+		var display_e = document.getElementById("event1");
+		var display_p = document.getElementById("place1")
+		var display_d = document.getElementById("date1");
+		var display_t = document.getElementById("time1");
+		var display_h = document.getElementById("host1");
+
+		n.addEventListener('input', fill =>{display_n.textContent = fill.target.value;})
+		e.addEventListener('input', fill =>{display_e.textContent = fill.target.value;})
+		p.addEventListener('input', fill =>{display_p.textContent = fill.target.value;})
+		d.addEventListener('input', fill =>{display_d.textContent = fill.target.value;})
+		t.addEventListener('input', fill =>{display_t.textContent = fill.target.value;})
+		h.addEventListener('input', fill =>{display_h.textContent = fill.target.value;})
+
+		function saveButton(){
+
+			localStorage.setItem("name", n.value);
+			localStorage.setItem("event", e.value);
+			localStorage.setItem("place", p.value);
+			localStorage.setItem("date", d.value);
+			localStorage.setItem("time", t.value);
+			localStorage.setItem("place", p.value);
+			localStorage.setItem("host", h.value);
+		}
+
+		function loadButton(){
+
+		localStorage.setItem("name");
+		localStorage.setItem("event");
+		localStorage.setItem("place");
+		localStorage.setItem("date");
+		localStorage.setItem("time");
+		localStorage.setItem("place");
+		localStorage.setItem("host");
+
+		}
+
+		function clearButton(){
+		window.location.reload();
+		}
+
+		function rememberMe(){
+			var n = document.getElementById("name");
+			var e = document.getElementById("event");
+			var p = document.getElementById("place");
+			var d = document.getElementById("date");
+			var t = document.getElementById("time");
+			var h = document.getElementById("host");
+			var g = document.getElementById("#greetList");
+
+			
+
+			localStorage.setItem("", name.value);
+			localStorage.setItem("", email.value);
+			alert("Customisation saved");
+		}
+		function fillin(){
+			var n = document.getElementById("name");
+			var e = document.getElementById("event");
+			var p = document.getElementById("place");
+			var d = document.getElementById("date");
+			var t = document.getElementById("time");
+			var h = document.getElementById("host");
+			var g = document.getElementById("#greetList");
+
+		}
+	</script>
+</body>
+</html>
